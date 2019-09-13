@@ -30,7 +30,7 @@ prediction = pd.DataFrame(prediction)
 prediction = pd.get_dummies(prediction)
 print(prediction)
 prediction.columns = ['A', 'B', 'C', 'D']
-df = pd.concat([y, prediction], axis=1)
+df = pd.concat([y[['id']], prediction], axis=1)
 print(prediction)
 df.to_csv(STRING.submission, index=False, sep=',', encoding='utf-8')
 # falta atar ID
